@@ -1,0 +1,11 @@
+# Makefile
+all: SBSchwalb
+
+SBSchwalb: SBSchwalb.o
+	gcc -o $@ $+
+
+SBSchwalb.o : SBSchwalb.s
+	as -o $@ $<
+
+clean:
+	rm -vf SBSchwalb *.o

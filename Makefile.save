@@ -1,0 +1,11 @@
+# Makefile
+all: Schwalb_Lab5
+
+Schwalb_Lab5: Schwalb_Lab5.o
+	gcc -o $@ $+Schwalb_Lab5
+
+SBSchwalb.o : SBSchwalb.s
+	as -o $@ $<
+
+clean:
+	rm -vf SBSchwalb *.o
